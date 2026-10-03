@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Busitema University Homepage</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+background-color: #f4f6f9;
+color: #333;
+min-height: 100vh;
+padding: 20px;
+}
+.page-wrapper {
+border: 8px solid #1a73e8;
+min-height: calc(100vh - 40px);
+background-color: #ffffff;
+display: flex;
+flex-direction: column;
+}
+header {
+background-color: #ffffff;
+padding: 25px 40px;
+border-bottom: 3px solid #1a73e8;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.logo-container {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+.logo-container img {
+height: 90px;
+width: auto;
+}
+.logo-text h2 {
+color: #0b2545;
+font-size: 1.5rem;
+font-weight: bold;
+}
+.logo-text p {
+color: #1a73e8;
+font-size: 0.9rem;
+font-weight: 600;
+}
+nav ul {
+display: flex;
+list-style: none;
+gap: 30px;
+align-items: center;
+}
+nav ul li a {
+text-decoration: none;
+color: #0b2545;
+font-weight: 600;
+font-size: 1.1rem;
+transition: color 0.3s ease;
+}
+nav ul li a:hover {
+color: #1a73e8;
+}
+.header-contacts {
+text-align: right;
+font-size: 0.9rem;
+color: #555;
+}
+.header-contacts a {
+color: #1a73e8;
+text-decoration: none;
+font-weight: 600;
+}
+main {
+flex: 1;
+padding: 0 40px;
+}
+.hero {
+text-align: center;
+margin: 40px 0;
+background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+padding: 50px;
+border-radius: 15px;
+box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.hero h1 {
+color: #0b2545;
+margin-bottom: 15px;
+font-size: 2.5rem;
+}
+.hero p.tagline {
+font-size: 1.4rem;
+color: #1a73e8;
+font-weight: 600;
+margin-bottom: 10px;
+}
+.hero p.desc {
+font-size: 1.1rem;
+color: #555;
+max-width: 700px;
+margin: 0 auto;
+}
+.slider-container {
+max-width: 900px;
+margin: 0 auto 60px auto;
+overflow: hidden;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.slider {
+display: flex;
+width: 600%;
+animation: slideAnimation 30s infinite;
+}
+.slide {
+width: 16.6667%;
+}
+.slide img {
+width: 100%;
+height: 450px;
+object-fit: cover;
+display: block;
+}
+@keyframes slideAnimation {
+0%, 16% { transform: translateX(0%); }
+20%, 36% { transform: translateX(-16.6667%); }
+40%, 56% { transform: translateX(-33.3333%); }
+60%, 76% { transform: translateX(-50%); }
+80%, 96% { transform: translateX(-66.6667%); }
+100% { transform: translateX(0%); }
+}
+.info-section {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+margin-bottom: 60px;
+}
+.info-card {
+background-color: #ffffff;
+padding: 40px;
+border-radius: 15px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+border-top: 5px solid #1a73e8;
+transition: transform 0.3s ease;
+}
+.info-card:hover {
+transform: translateY(-5px);
+}
+.info-card h2 {
+color: #0b2545;
+margin-bottom: 20px;
+font-size: 1.8rem;
+display: flex;
+align-items: center;
+gap: 15px;
+}
+.info-card p {
+color: #555;
+font-size: 1.1rem;
+}
+.clubs-section {
+background-color: #f8f9fa;
+padding: 50px 40px;
+border-radius: 15px;
+margin-bottom: 60px;
+}
+.clubs-section h2 {
+color: #0b2545;
+margin-bottom: 40px;
+text-align: center;
+font-size: 2rem;
+}
+.clubs-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
+}
+.club-card {
+background-color: #ffffff;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+border-left: 5px solid #1a73e8;
+transition: all 0.3s ease;
+}
+.club-card:hover {
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+transform: translateY(-3px);
+border-left-color: #0b2545;
+}
+.club-card h3 {
+color: #0b2545;
+margin-bottom: 15px;
+font-size: 1.3rem;
+}
+.club-card p {
+color: #555;
+font-size: 1rem;
+}
+footer {
+background-color: #0b2545;
+color: #ffffff;
+padding: 40px;
+text-align: center;
+border-top: 5px solid #1a73e8;
+}
+.footer-content {
+font-size: 1rem;
+max-width: 800px;
+margin: 0 auto;
+}
+.footer-content p {
+margin-bottom: 15px;
+}
+.footer-content a {
+color: #64ffda;
+text-decoration: none;
+font-weight: 600;
+}
+@media (max-width: 1024px) {
+.info-section {
+grid-template-columns: 1fr;
+}
+}
+@media (max-width: 768px) {
+header {
+flex-direction: column;
+gap: 20px;
+text-align: center;
+}
+main {
+padding: 0 20px;
+}
+.hero {
+padding: 30px;
+}
+}
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+<header>
+<div class="logo-container">
+<img src="./LOGO.png" alt="Busitema University Logo">
+<div class="logo-text">
+<h2>BUSITEMA UNIVERSITY</h2>
+<p>Center of Excellence</p>
+</div>
+</div>
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Academics</a></li>
+<li><a href="#">Admissions</a></li>
+<li><a href="#">Research</a></li>
+<li><a href="#">About Us</a></li>
+</ul>
+</nav>
+<div class="header-contacts">
+<p>Tel: +256700686543</p>
+<p>Email: <a href="mailto:info@busitemauniversity.ac.ug">info@busitemauniversity.ac.ug</a></p>
+</div>
+</header>
+<main>
+<section class="hero">
+<h1>WELCOME TO BUSITEMA UNIVERSITY</h1>
+<p class="tagline">"Building Knowledge, Creating the Future"</p>
+<p class="desc">We offer a holistic Education to Ugandan citizens in Science, Technology, and Art, fostering innovation and sustainable development.</p>
+</section>
+<section class="slider-container">
+<div class="slider">
+<div class="slide"><img src="./PHOTO 1.jpg" alt="Campus Life"></div>
+<div class="slide"><img src="./2.jpg" alt="Modern Facilities"></div>
+<div class="slide"><img src="./3.jpg" alt="Student Activities"></div>
+<div class="slide"><img src="./4.jpg" alt="Graduation Ceremony"></div>
+<div class="slide"><img src="./5.png" alt="Campus Grounds"></div>
+<div class="slide"><img src="./PHOTO 1.jpg" alt="Seamless Loop"></div>
+</div>
+</section>
+<section class="info-section">
+<div class="info-card">
+<h2>Mission</h2>
+<p>To provide transformative knowledge, skills, and innovations that foster sustainable socio-economic development through quality teaching and research.</p>
+</div>
+<div class="info-card">
+<h2>Vision</h2>
+<p>To be a premier center of excellence in science, technology, and innovation, producing highly skilled and socially responsible graduates.</p>
+</div>
+</section>
+<section class="clubs-section">
+<h2>Student Associations & Campus Activities</h2>
+<div class="clubs-grid">
+<div class="club-card">
+<h3>Engineering Students Association (BESA)</h3>
+<p>BESA organizes practical workshops, field visits, and innovation challenges, allowing hands-on engineering experience and professional networking for students.</p>
+</div>
+<div class="club-card">
+<h3>Agricultural Club</h3>
+<p>Focuses on sustainable farming projects, community outreach programs, and agricultural research, promoting modern agricultural technologies and food security.</p>
+</div>
+<div class="club-card">
+<h3>University Debate Society</h3>
+<p>Develops public speaking, critical thinking, and articulate expression in learners through regular debates, national competitions, and community forums.</p>
+</div>
+<div class="club-card">
+<h3>Guild Union & Sports</h3>
+<p>Manages guild activities, student leadership programs, and diverse sports competitions including football, athletics, drama, and musical performances.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-content">
+<p>Busitema University, P.O. Box 145, Jinja, Uganda.</p>
+<p>Tel: +256700686543 / +256755432167 </p>
+<p>Email: <a href="mailto:info@busitemauniversity.ac.ug">info@busitemauniversity.ac.ug</a></p>
+<p>© 2026 Busitema University. All Rights Reserved.</p>
+</div>
+</footer>
+</div>
+</body>
+</html>
