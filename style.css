@@ -1,0 +1,523 @@
+/* =====================================================
+   BUSITEMA UNIVERSITY - shared stylesheet (all pages)
+   Sizes use rem, and the root font size grows on large
+   screens / TVs so everything scales up together.
+   ===================================================== */
+
+:root {
+  --blue: #1a73e8;
+  --navy: #0b2545;
+  --text: #333;
+  --muted: #555;
+  --page-bg: #f4f6f9;
+  --line: #e3eaf5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Scale the whole design up on big monitors and TVs */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+@media (min-width: 1600px) { html { font-size: 112.5%; } }
+@media (min-width: 2200px) { html { font-size: 137.5%; } }
+@media (min-width: 3000px) { html { font-size: 175%; } }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--page-bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 1.25rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page-wrapper {
+  border: 0.5rem solid var(--blue);
+  min-height: calc(100vh - 2.5rem);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keeps content from stretching too wide on very large screens */
+.container {
+  width: 100%;
+  max-width: 85rem;
+  margin-inline: auto;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+  background-color: #ffffff;
+  padding: 1.5rem clamp(1rem, 4vw, 2.5rem);
+  border-bottom: 3px solid var(--blue);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  text-decoration: none;
+}
+
+.logo-container img {
+  height: clamp(3.5rem, 6vw, 5.6rem);
+  width: auto;
+}
+
+.logo-text h2 {
+  color: var(--navy);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.logo-text p {
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 0.5rem 1.8rem;
+  align-items: center;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0.3rem 0;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--blue);
+}
+
+nav ul li a[aria-current="page"] {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
+
+.header-contacts {
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.header-contacts a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Menu button: only shown on phones */
+.menu-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--blue);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.menu-toggle:focus-visible,
+nav a:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
+/* ---------------- MAIN ---------------- */
+main {
+  flex: 1;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+
+.hero {
+  text-align: center;
+  margin: clamp(1.5rem, 4vw, 2.5rem) 0;
+  background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+  padding: clamp(1.5rem, 5vw, 3.1rem);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.hero h1 {
+  color: var(--navy);
+  margin-bottom: 0.9rem;
+  font-size: clamp(1.5rem, 1rem + 2.2vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.hero p.tagline {
+  font-size: clamp(1.1rem, 0.9rem + 0.9vw, 1.4rem);
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.hero p.desc {
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.1rem);
+  color: var(--muted);
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+/* Photo slider */
+.slider-container {
+  max-width: 100%;
+  margin: 0 auto 3.75rem auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.slider {
+  display: flex;
+  width: 600%;
+  animation: slideAnimation 30s infinite;
+}
+
+.slide {
+  width: 16.6667%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  min-height: 13rem;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes slideAnimation {
+  0%, 16% { transform: translateX(0%); }
+  20%, 36% { transform: translateX(-16.6667%); }
+  40%, 56% { transform: translateX(-33.3333%); }
+  60%, 76% { transform: translateX(-50%); }
+  80%, 96% { transform: translateX(-66.6667%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Mission / Vision (and any two-column cards) */
+.info-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin-bottom: 3.75rem;
+}
+
+.info-card {
+  background-color: #ffffff;
+  padding: clamp(1.4rem, 3vw, 2.5rem);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border-top: 5px solid var(--blue);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h2 {
+  color: var(--navy);
+  margin-bottom: 1.1rem;
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.1rem);
+}
+
+/* Clubs / faculties */
+.clubs-section {
+  background-color: #f8f9fa;
+  padding: clamp(1.5rem, 4vw, 3.1rem) clamp(1rem, 3vw, 2.5rem);
+  border-radius: 15px;
+  margin-bottom: 3.75rem;
+}
+
+.clubs-section h2 {
+  color: var(--navy);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: center;
+  font-size: clamp(1.4rem, 1rem + 1.6vw, 2rem);
+  line-height: 1.25;
+}
+
+.clubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.9rem);
+}
+
+.club-card {
+  background-color: #ffffff;
+  padding: clamp(1.25rem, 2.5vw, 1.9rem);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-left: 5px solid var(--blue);
+  transition: all 0.3s ease;
+}
+
+.club-card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  border-left-color: var(--navy);
+}
+
+.club-card h3 {
+  color: var(--navy);
+  margin-bottom: 0.9rem;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.club-card p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ---------------- ACADEMICS PAGE EXTRAS ---------------- */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 3.75rem;
+}
+
+.fact {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border-bottom: 5px solid var(--blue);
+}
+
+.fact strong {
+  display: block;
+  color: var(--navy);
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.fact span {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.campus {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  padding: 0.25rem 0.85rem;
+  background-color: #e3f2fd;
+  color: var(--navy);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.club-card .research {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.club-card .research strong {
+  color: var(--navy);
+}
+
+.cta-band {
+  background-color: var(--navy);
+  color: #ffffff;
+  text-align: center;
+  padding: clamp(1.5rem, 4vw, 2.8rem);
+  border-radius: 15px;
+  margin-bottom: 3.75rem;
+}
+
+.cta-band h2 {
+  font-size: clamp(1.35rem, 1rem + 1.4vw, 1.9rem);
+  margin-bottom: 0.7rem;
+}
+
+.cta-band p {
+  max-width: 40rem;
+  margin: 0 auto 1.4rem;
+  color: #dbe7f7;
+}
+
+.cta-band a.button {
+  display: inline-block;
+  background-color: var(--blue);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+  transition: background-color 0.3s ease;
+}
+
+.cta-band a.button:hover {
+  background-color: #1558b8;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  background-color: var(--navy);
+  color: #ffffff;
+  padding: clamp(1.5rem, 4vw, 2.5rem) 1.25rem;
+  text-align: center;
+  border-top: 5px solid var(--blue);
+}
+
+.footer-content {
+  font-size: 1rem;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin-bottom: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.footer-content a {
+  color: #64ffda;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------------- RESPONSIVE: TABLETS ---------------- */
+@media (max-width: 1100px) {
+  /* menu drops onto its own row under the logo and contacts */
+  nav {
+    order: 3;
+    flex-basis: 100%;
+    border-top: 1px solid var(--line);
+    padding-top: 0.9rem;
+  }
+}
+
+/* ---------------- RESPONSIVE: PHONES ---------------- */
+@media (max-width: 768px) {
+  body { padding: 0.5rem; }
+
+  .page-wrapper {
+    border-width: 5px;
+    min-height: calc(100vh - 1rem);
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.9rem;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .menu-toggle { display: inline-flex; }
+
+  nav {
+    order: 0;
+    display: none;
+    width: 100%;
+    border-top: none;
+    padding-top: 0;
+  }
+
+  nav.open { display: block; }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--line);
+    border-left: 4px solid transparent;
+  }
+
+  nav ul li:last-child a { border-bottom: none; }
+
+  nav ul li a[aria-current="page"] {
+    border-bottom-color: var(--line);
+    border-left-color: var(--blue);
+    background-color: #f2f7fe;
+  }
+
+  .header-contacts { text-align: center; }
+
+  .slide img {
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+
+  .info-card:hover,
+  .club-card:hover { transform: none; }
+}
+
+@media (max-width: 400px) {
+  .logo-text h2 { font-size: 1.05rem; }
+  header { padding: 1rem 0.75rem; }
+}
+
+/* Respect people who turn off animation */
+@media (prefers-reduced-motion: reduce) {
+  .slider { animation: none; }
+  * { transition: none !important; }
+}

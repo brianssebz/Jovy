@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academics | Busitema University</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-wrapper">
+<header>
+<div class="header-inner">
+<a class="logo-container" href="index.html">
+<img src="./LOGO.png" alt="Busitema University Logo">
+<div class="logo-text">
+<h2>BUSITEMA UNIVERSITY</h2>
+<p>Center of Excellence</p>
+</div>
+</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">&#9776; Menu</button>
+<nav id="site-nav" aria-label="Main navigation">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="academics.html" aria-current="page">Academics</a></li>
+<li><a href="#">Admissions</a></li>
+<li><a href="#">Research</a></li>
+<li><a href="#">About Us</a></li>
+</ul>
+</nav>
+<div class="header-contacts">
+<p>Tel: +256700686543</p>
+<p>Email: <a href="mailto:info@busitemauniversity.ac.ug">info@busitemauniversity.ac.ug</a></p>
+</div>
+</div>
+</header>
+<main>
+<div class="container">
+<section class="hero">
+<h1>ACADEMICS AT BUSITEMA UNIVERSITY</h1>
+<p class="tagline">"Science, Technology and Innovation for Development"</p>
+<p class="desc">Learn on a multi-campus university built around practical, community-focused programmes in engineering, science, agriculture, health and management.</p>
+</section>
+
+<section class="facts" aria-label="Academics at a glance">
+<div class="fact"><strong>2007</strong><span>Year the University was established</span></div>
+<div class="fact"><strong>6</strong><span>Faculties across our campuses</span></div>
+<div class="fact"><strong>83</strong><span>Academic programmes</span></div>
+<div class="fact"><strong>1</strong><span>Study centre in Tororo for short, skills-based courses</span></div>
+</section>
+
+<section class="clubs-section">
+<h2>Our Faculties</h2>
+<div class="clubs-grid">
+<div class="club-card">
+<span class="campus">Busitema Campus, Busia District</span>
+<h3>Faculty of Engineering and Technology</h3>
+<p>Our original engineering faculty, based at the former National College of Agricultural Mechanization. It trains engineers and technologists, including in mining, electrical and computer, industrial and agro-processing engineering.</p>
+</div>
+<div class="club-card">
+<span class="campus">Nagongera Campus, Tororo District</span>
+<h3>Faculty of Science and Education</h3>
+<p>Focuses on science education and ICT in education, preparing teachers and scientists for schools and communities.</p>
+<p class="research"><strong>Research:</strong> education for sustainable development, astronomy, material science and ICT for education.</p>
+</div>
+<div class="club-card">
+<span class="campus">Arapai Campus, Soroti</span>
+<h3>Faculty of Agriculture and Animal Sciences</h3>
+<p>Covers crop production, animal production and agribusiness, with a strong practical and farm-based approach.</p>
+<p class="research"><strong>Research:</strong> livestock and poultry improvement and mushroom production.</p>
+</div>
+<div class="club-card">
+<span class="campus">Namasagali Campus, Kamuli District</span>
+<h3>Faculty of Natural Resources and Environmental Sciences</h3>
+<p>Studies how to manage natural resources and protect the environment, supporting sustainable livelihoods across the region.</p>
+</div>
+<div class="club-card">
+<span class="campus">Mbale Campus (Mbale City) and Kabwangasi Campus</span>
+<h3>Faculty of Health Sciences</h3>
+<p>A key centre for medical education and health research, training health professionals to serve communities across Eastern Uganda.</p>
+<p class="research"><strong>Research:</strong> malaria, ICT in health, and maternal and child health.</p>
+</div>
+<div class="club-card">
+<span class="campus">Pallisa Campus, Pallisa District</span>
+<h3>Faculty of Management Sciences</h3>
+<p>Focuses on management science, tourism and hospitality, preparing graduates for business, public service and enterprise.</p>
+<p class="research"><strong>Research:</strong> business survival, decentralisation, and organisational behaviour.</p>
+</div>
+</div>
+</section>
+
+<section class="info-section">
+<div class="info-card">
+<h2>Teaching</h2>
+<p>Our programmes combine classroom learning with workshops, laboratories, field visits and community projects, so graduates leave with skills employers and communities can use.</p>
+</div>
+<div class="info-card">
+<h2>Research and Outreach</h2>
+<p>Staff and students carry out research and outreach that respond to local needs, from smart agriculture and renewable energy to health and environmental sustainability.</p>
+</div>
+</section>
+
+<section class="cta-band">
+<h2>Ready to study with us?</h2>
+<p>Contact the University to ask about programmes, entry requirements and how to apply.</p>
+<a class="button" href="#">Apply Now</a>
+</section>
+</div>
+</main>
+<footer>
+<div class="footer-content">
+<p>Busitema University, P.O. Box 145, Jinja, Uganda.</p>
+<p>Tel: +256700686543 / +256755432167 </p>
+<p>Email: <a href="mailto:info@busitemauniversity.ac.ug">info@busitemauniversity.ac.ug</a></p>
+<p>© 2026 Busitema University. All Rights Reserved.</p>
+</div>
+</footer>
+</div>
+<script>
+// Phone menu button
+var toggle = document.querySelector('.menu-toggle');
+var nav = document.getElementById('site-nav');
+toggle.addEventListener('click', function () {
+  var open = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+</script>
+</body>
+</html>
